@@ -12,11 +12,12 @@ $('#info').html("<img src='spinner.gif'/>");
  }).done(function(data) {
 	console.log(data);
  	$('#info').empty()
- 	for(var i=0; i<10; i++){
-		 var photoUrl = "https://farm"+data.photos.photo[i].farm+".staticflickr.com/"+data.photos.photo[i].server+"/"+data.photos.photo[i].id+"_"+data.photos.photo[i].secret+"_m.jpg";
+ 	for(var i=0; i<data.photos.photo.length; i++){
+		var photoUrl = "https://farm"+data.photos.photo[i].farm+".staticflickr.com/"+data.photos.photo[i].server+"/"+data.photos.photo[i].id+"_"+data.photos.photo[i].secret;
 		$('<img src="'+ photoUrl +'"/>').load(function() {
-  			$(this).appendTo('#info');
+  			$('<a href=\''+ this.src +'_b.jpg\'><img src="'+ this.src +'_s.jpg"/></a>').appendTo('#info');
 		});
+
  	}
 });
 });
