@@ -10,6 +10,7 @@
     <script src="getAllContexts.js"></script>
     <script src="getListForPhoto.js"></script>
     <script src="openTab.js"></script>
+    <script src="seeDetails.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -17,9 +18,13 @@
     <div class="tab">
         <button class="tablinks" onclick="openTab(event, 'browser')">Browser</button>
         <button class="tablinks" onclick="openTab(event, 'fav')">Favorite</button>
+        <button class="tablinks" onclick="openTab(event, 'infoDetail')">Image Detail</button>
     </div>
     <div id="fav" class="tabcontent">
         <div id='favs'> </div>
+    </div>
+    <div id="infoDetail" class="tabcontent">
+            <div id='infoDetails'><h1>Image Detail</h1> </div>
     </div>
     <div id="browser" class="tabcontent">
         <input id='value-input' type='text'>
