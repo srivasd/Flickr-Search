@@ -9,12 +9,22 @@
     <script src="addFavourite.js"></script>
     <script src="getAllContexts.js"></script>
     <script src="getListForPhoto.js"></script>
+    <script src="openTab.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    <input id='value-input' type='text'>
-    <button id='add-button'>Add</button>
-    <div id='info'>
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'browser')">Browser</button>
+        <button class="tablinks" onclick="openTab(event, 'fav')">Favorite</button>
+    </div>
+    <div id="fav" class="tabcontent">
+        <div id='favs'> </div>
+    </div>
+    <div id="browser" class="tabcontent">
+        <input id='value-input' type='text'>
+        <button id='add-button'>Add</button>
+        <div id='info'> </div>
     </div>
 </body>
 

@@ -1,20 +1,8 @@
- /*$(document).ready(function(){
-
- var photo_id= 33545149930; //Temporary
-
-$.ajax({
- method: "POST",
- url:"https://api.flickr.com/services/rest/"+
-				"?api_key="+api_key+"&format=json"+
-				"&method=flickr.favorites.add&+photo_id="+photo_id+"&nojsoncallback=?",
- data: JSON.stringify({}),
- processData: false,
- headers: {
- "Content-type":"application/json"
- }
- }).done(function(data, textStatus, jqXHR) {
-    console.log(textStatus+" "+jqXHR.statusCode());
- }).fail(function(data, textStatus, jqXHR){
-    console.log(textStatus+" "+jqXHR.statusCode());
- });
- });*/
+function addFavourite (value) {
+    var div = $("div")[0];
+    //var value = $(this).attr("id");
+    console.log(value);
+    jQuery.data( div, value );
+    $('<div style="width:95px;display:inline-block;margin:5px;"><button id=\"detail\" onclick=\"window.location.href=\''+ value +'_b.jpg\'\"><img src="'+ value +'_s.jpg"/></button</div>').appendTo('#favs');
+}
+    
