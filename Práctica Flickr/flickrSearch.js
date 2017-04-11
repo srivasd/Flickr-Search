@@ -19,7 +19,7 @@ $('#info').html("<img src='spinner.gif'/>");
 		$('<img src="'+ photoUrl +'"/>').load(function() {
             var fun = "addFavorite(";
             let srcc = "1";																		
-  			$('<div style="width:95px;display:inline-block;margin:5px;"><button id=\"detail\" onclick=\"seeDetails(\'' + this.src+'\')\"><img src="'+ this.src +'_s.jpg"/></button><button id="'+ photoUrl +';" style="position:relative;top:50%; left:25%;margin:5px;" onclick="addFavourite(\'' + this.src + '\')">Fav</button></div>').appendTo('#info');
+  			$('<div style="width:95px;display:inline-block;margin:5px;"><button id=\"detail\" onclick=\"seeDetails(\'' + this.src+'\')\"><img src="'+ this.src +'_s.jpg"/></button><div  class=\'' + this.src + 'class\'><button id="'+ photoUrl +';" style="position:relative;top:50%; left:25%;margin:5px;" onclick="addFavourite(\'' + this.src + '\')">Fav</button></div></div>').appendTo('#info');
 	});
  	}
      $('#info').add("</div>")
