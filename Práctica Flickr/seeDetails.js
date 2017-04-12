@@ -22,7 +22,7 @@ function seeDetails (value, photoTitle) {
                         $( "#galleries" ).empty();
                         $( "#groups" ).empty();
                         $( "#description" ).empty();
-                        $('<div col-md-9><div style="width:95px;display:inline-block;margin:5px;"><img src="'+ value +'_b.jpg"/></div></div>').appendTo('#infoDetails');               
+                        $('<div><div style="width:95px;display:inline-block;margin:5px;"><img height="500" width="500" src="'+ value +'_b.jpg"/></div></div>').appendTo('#infoDetails');               
                         if(photoTitle){
                                 $('<p>'+photoTitle+'</p>').appendTo('#description'); 
                         }

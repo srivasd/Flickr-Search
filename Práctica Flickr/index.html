@@ -9,8 +9,7 @@
     <script src="addFavourite.js"></script>
     <script src="openTab.js"></script>
     <script src="seeDetails.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+    <link rel="stylesheet" type="text/css" href="style.css"> </head>
 
 <body>
     <div class="tab">
@@ -18,23 +17,30 @@
         <button class="tablinks" onclick="openTab(event, 'fav')">Favourite</button>
         <button class="tablinks" onclick="openTab(event, 'infoDetail')">Image Detail</button>
     </div>
-    <div id="fav" class="tabcontent">
-        <div id='favs'> </div>
-    </div>
-    <div id="infoDetail" class="tabcontent">
-            <h1>Image Detail</h1> 
-            <div id='infoDetails'></div>
-            <h2>Description</h2>
-            <div id='description'></div>
-            <h2>Galleries</h2> 
-            <div id='galleries'></div>
-            <h2>Groups</h2> 
-            <div id='groups'></div>
-    </div>
     <div id="browser" class="tabcontent">
         <input id='value-input' type='text'>
         <button id='add-button'>Add</button>
         <div id='info'> </div>
+    </div>
+    <div id="fav" class="tabcontent">
+        <h3>Selected</h3>
+        <div id='selected'> </div>
+        <h3>Galleries</h3>
+        <div id='galleries'> </div>
+        <h3>Sets</h3>
+        <div id='sets'> </div>
+        <h3>Pools</h3>
+        <div id='pools'> </div>
+    </div>
+    <div id="infoDetail" class="tabcontent">
+        <h1>Image Detail</h1>
+        <div id='infoDetails'></div>
+        <h2>Description</h2>
+        <div id='description'></div>
+        <h2>Galleries</h2>
+        <div id='galleries'></div>
+        <h2>Groups</h2>
+        <div id='groups'></div>
     </div>
 </body>
 
