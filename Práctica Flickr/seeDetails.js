@@ -45,8 +45,7 @@ function seeDetails (value, photoTitle) {
                         if(groups.pool){
                                 $('<h3>Pools</h3>').appendTo('#groups');
                                 for(var i=0; i<groups.pool.length; i++){   
-                                        $('<p>Title: '+groups.pool[i].title+'</p>').appendTo('#groups'); 
-                                        $('<p>URL: '+groups.pool[i].url+'</p>').appendTo('#groups');
+                                        $('<div><a target="_blank" href="https://www.flickr.com'+groups.pool[i].url+'">'+groups.pool[i].url+'</a></div><button  id="'+ groups.pool[i].url[0] +'"  onclick="addPool(\'' + value + '\',\''+ photoTitle +'\',\''+ groups.pool[i].url +'\')">Add Pool</button>').appendTo('#groups');
                                 } 
                         }else{
                                 $('<h3>No pool available</h3>').appendTo('#groups'); 
