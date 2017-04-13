@@ -1,23 +1,20 @@
-function seeDetails (value, photoTitle) {
-        console.log(value);  
+function seeDetails (value, photoTitle) { 
         var splitUrl = value.split("/");   
         var splitUrl2 = splitUrl[4].split("_");
         var id = splitUrl2[0];
-        console.log(id); 
          $.ajax({
                 url:"https://api.flickr.com/services/rest/"+
 			"?api_key="+api_key+"&format=json"+
 			"&method=flickr.galleries.getListForPhoto&photo_id="+id+"&nojsoncallback=?"
         }).done(function(data) {
                 var galleries = data;
-                console.log(galleries);
 	        $.ajax({
                         url:"https://api.flickr.com/services/rest/"+
 			        "?api_key="+api_key+"&format=json"+
 			        "&method=flickr.photos.getAllContexts&photo_id="+id+"&nojsoncallback=?"
                 }).done(function(data) {
                         var groups = data;
-	                console.log(groups);
+                        console.log(groups);
                         $( "#infoDetails" ).empty();
                         $( "#galleries" ).empty();
                         $( "#groups" ).empty();
@@ -47,7 +44,10 @@ function seeDetails (value, photoTitle) {
                                 for(var i=0; i<groups.pool.length; i++){   
                                         var poolName1 = groups.pool[i].url.split("/");
                                         var idPool = poolName1[2];
-                                        $('<div><a target="_blank" href="https://www.flickr.com'+groups.pool[i].url+'">'+groups.pool[i].url+'</a></div><button  id="'+ idPool +'"  onclick="addPool(\'' + value + '\',\''+ photoTitle +'\',\''+ groups.pool[i].url +'\')">Add Pool</button>').appendTo('#groups');
+                                        var splitGroup_id = groups.pool[i].id.split("@");
+                                        var group_id0 = splitGroup_id[0];
+                                        var group_id1 = splitGroup_id[1];
+                                        $('<div><button id=\"search-pool'+group_id0+'\" onclick=\"searchPool(\''+group_id0+'\',\''+group_id1+'\')\">'+groups.pool[i].url+'</button></div><button  id="'+ idPool +'"  onclick="addPool(\'' + value + '\',\''+ photoTitle +'\',\''+ groups.pool[i].url +'\',\''+ groups.pool[i].id +'\')">Add Pool</button>').appendTo('#groups');
                                 } 
                         }else{
                                 $('<h3>No pool available</h3>').appendTo('#groups'); 

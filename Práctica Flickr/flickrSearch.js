@@ -33,6 +33,7 @@ $('#info').html("<img src='spinner.gif'/>");
     
 $('#findByGallery').click(function(){
     var gallery = "house";
+    $('#info').html("<img src='spinner.gif'/>");
     $.ajax({
         url:"https://api.flickr.com/services/rest/"+
 				"?api_key="+api_key+"&format=json"+
