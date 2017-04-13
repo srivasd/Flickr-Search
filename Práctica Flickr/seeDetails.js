@@ -34,7 +34,8 @@ function seeDetails (value, photoTitle) {
                         if(groups.set){
                                 $('<h3>Sets</h3>').appendTo('#groups'); 
                                 for(var i=0; i<groups.set.length; i++){   
-                                        $('<p> Title: '+groups.set[i].title+'</p><button  id="'+ groups.set[i].title[0] +'"  onclick="addSet(\'' + value + '\',\''+ photoTitle +'\',\''+ groups.set[i].title +'\')">Add Set</button>').appendTo('#groups');
+                                        var photoset_id = groups.set[i].id;
+                                        $('<button id=\"search-set'+photoset_id+'\" onclick=\"searchSet(\''+photoset_id+'\')\"> Title: '+groups.set[i].title+'</button><button  id="'+ groups.set[i].title[0] +'"  onclick="addSet(\'' + value + '\',\''+ photoTitle +'\',\''+ groups.set[i].title +'\',\''+ photoset_id +'\')">Add Set</button><br>').appendTo('#groups');
                                 } 
                         }else{
                                 $('<h3>No set available</h3>').appendTo('#groups'); 
