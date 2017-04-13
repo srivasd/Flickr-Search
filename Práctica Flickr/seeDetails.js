@@ -28,7 +28,7 @@ function seeDetails (value, photoTitle) {
                         }
                         if(galleries.galleries.gallery.length!==0){
                                 for(var i=0; i<galleries.galleries.gallery.length; i++){   
-                                        $('<p>'+galleries.galleries.gallery[0].title+'</p>').appendTo('#galleries'); 
+                                        $('<p>'+galleries.galleries.gallery[0].title+'</p><button id="'+ galleries.galleries.gallery[0].title +';" style="position:relative;top:50%; left:25%;margin:5px;" onclick="addGallery(\'' + galleries.galleries.gallery[0].title + '\')">Add Gallery</button>').appendTo('#galleries');
                                 } 
                         }else{
                                 $('<p>No gallery available</p>').appendTo('#galleries'); 
@@ -37,7 +37,7 @@ function seeDetails (value, photoTitle) {
                         if(groups.set){
                                 $('<h3>Sets</h3>').appendTo('#groups'); 
                                 for(var i=0; i<groups.set.length; i++){   
-                                        $('<p> Title: '+groups.set[i].title+'</p>').appendTo('#groups'); 
+                                        $('<p> Title: '+groups.set[i].title+'</p><button  id="'+ groups.set[i].title[0] +'"  onclick="addSet(\'' + value + '\',\''+ photoTitle +'\',\''+ groups.set[i].title +'\')">Add Set</button>').appendTo('#groups');
                                 } 
                         }else{
                                 $('<h3>No set available</h3>').appendTo('#groups'); 
@@ -46,7 +46,7 @@ function seeDetails (value, photoTitle) {
                                 $('<h3>Pools</h3>').appendTo('#groups');
                                 for(var i=0; i<groups.pool.length; i++){   
                                         $('<p>Title: '+groups.pool[i].title+'</p>').appendTo('#groups'); 
-                                        $('<p>URL: '+groups.pool[i].url+'</p>').appendTo('#groups');                                        
+                                        $('<p>URL: '+groups.pool[i].url+'</p>').appendTo('#groups');
                                 } 
                         }else{
                                 $('<h3>No pool available</h3>').appendTo('#groups'); 
