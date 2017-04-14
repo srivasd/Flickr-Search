@@ -28,7 +28,7 @@ function seeDetails (value, photoTitle) {
                                 for(var i=0; i<galleries.galleries.gallery.length; i++){ 
                                         var titleMod = galleries.galleries.gallery[i].title._content.split(" ");
                                         var title0 = titleMod[0];  
-                                        $('<button id=\"findByGallery'+galleries.galleries.gallery[i].id+'\" onclick=\"searchGallery(\''+galleries.galleries.gallery[i].id+'\')\">'+galleries.galleries.gallery[i].title._content+'</button><button id=\"'+ title0 +'\" style="position:relative;top:50%; left:25%;margin:5px;" onclick="addGallery(\''+value+'\',\'' + galleries.galleries.gallery[i].title._content +'\',\''+galleries.galleries.gallery[i].id+'\')">Add Gallery</button><br>').appendTo('#galleries');
+                                        $('<button class="btn2" id=\"findByGallery'+galleries.galleries.gallery[i].id+'\" onclick=\"searchGallery(\''+galleries.galleries.gallery[i].id+'\')\">'+galleries.galleries.gallery[i].title._content+'</button><button class="btn2" id=\"'+ title0 +'\" onclick="addGallery(\''+value+'\',\'' + galleries.galleries.gallery[i].title._content +'\',\''+galleries.galleries.gallery[i].id+'\')">Add Gallery</button><br>').appendTo('#galleries');
                                 } 
                         }else{
                                 $('<p>No gallery available</p>').appendTo('#galleries'); 
