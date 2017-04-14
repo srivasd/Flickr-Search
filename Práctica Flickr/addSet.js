@@ -3,7 +3,7 @@ function addSet (value, photoTitle, set, photoset_id) {
     console.log(value);
     $("#"+set[0]).hide();
     jQuery.data( div, value );
-    $('<div style="width:95px;display:inline-block;margin:5px;"><button id=\"search-set'+photoset_id+'\" onclick=\"searchSet(\''+photoset_id+'\')\"> Title: '+set+'</button><button id=\"detail\" onclick=\"seeDetails(\'' + value +'\',\''+ photoTitle +'\')\"><img src="'+ value +'_s.jpg"/></button</div>').appendTo('#selectedsets');
+    $('<div class="divbrowser"><button class="btn2" id=\"search-set'+photoset_id+'\" onclick=\"searchSet(\''+photoset_id+'\')\"> Title: '+set+'</button><button class="imgbrowser" id=\"detail\" onclick=\"seeDetails(\'' + value +'\',\''+ photoTitle +'\')\"><img src="'+ value +'_s.jpg"/></button</div>').appendTo('#selectedsets');
 }
 
 function searchSet (photoset_id){
@@ -27,7 +27,7 @@ function searchSet (photoset_id){
 		    $('<img id ="'+ photoTitle +'" src="'+ photoUrl +'"/>').load(function() {
                 var fun = "addFavorite(";
                 let srcc = "1";															
-  			    $('<div style="width:95px;display:inline-block;margin:5px;"><button id=\"detail\" onclick=\"seeDetails(\'' + this.src+'\',\''+ this.id +'\')\"><img src="'+ this.src +'_s.jpg"/></button><div  class=\'' + this.src + 'class\'><button id="'+ photoUrl +';" style="position:relative;top:50%; left:25%;margin:5px;" onclick="addFavourite(\'' + this.src + '\',\''+ this.id +'\')">Fav</button></div></div>').appendTo('#info');
+  			    $('<div class="divbrowser"><button class="imgbrowser" id=\"detail\" onclick=\"seeDetails(\'' + this.src+'\',\''+ this.id +'\')\"><img src="'+ this.src +'_s.jpg"/></button><div  class=\'' + this.src + 'class\'><button class="btn" id="'+ photoUrl +';"  onclick="addFavourite(\'' + this.src + '\',\''+ this.id +'\')">Fav</button></div></div>').appendTo('#info');
 	    });
  	}
      $('#info').add("</div>")
