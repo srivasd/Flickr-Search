@@ -20,7 +20,7 @@ function seeDetails (value, photoTitle) {
                         $( "#galleries" ).empty();
                         $( "#groups" ).empty();
                         $( "#description" ).empty();
-                        $('<div><div style="width:95px;display:inline-block;margin:5px;"><img height="500" width="500" src="'+ value +'_b.jpg"/></div></div>').appendTo('#infoDetails');               
+                        $('<div><div><img class="imgdetail" src="'+ value +'_b.jpg"/></div></div>').appendTo('#infoDetails');               
                         if(photoTitle){
                                 $('<p>'+photoTitle+'</p>').appendTo('#description'); 
                         }
@@ -38,7 +38,7 @@ function seeDetails (value, photoTitle) {
                                 $('<h3>Sets</h3>').appendTo('#groups'); 
                                 for(var i=0; i<groups.set.length; i++){   
                                         var photoset_id = groups.set[i].id;
-                                        $('<button id=\"search-set'+photoset_id+'\" onclick=\"searchSet(\''+photoset_id+'\')\"> Title: '+groups.set[i].title+'</button><button  id="'+ groups.set[i].title[0] +'"  onclick="addSet(\'' + value + '\',\''+ photoTitle +'\',\''+ groups.set[i].title +'\',\''+ photoset_id +'\')">Add Set</button><br>').appendTo('#groups');
+                                        $('<button class="btn2" id=\"search-set'+photoset_id+'\" onclick=\"searchSet(\''+photoset_id+'\')\"> Title: '+groups.set[i].title+'</button><button class="btn2"  id="'+ groups.set[i].title[0] +'"  onclick="addSet(\'' + value + '\',\''+ photoTitle +'\',\''+ groups.set[i].title +'\',\''+ photoset_id +'\')">Add Set</button><br>').appendTo('#groups');
                                 } 
                         }else{
                                 $('<h3>No set available</h3>').appendTo('#groups'); 
@@ -51,7 +51,7 @@ function seeDetails (value, photoTitle) {
                                         var splitGroup_id = groups.pool[i].id.split("@");
                                         var group_id0 = splitGroup_id[0];
                                         var group_id1 = splitGroup_id[1];
-                                        $('<div><button id=\"search-pool'+group_id0+'\" onclick=\"searchPool(\''+group_id0+'\',\''+group_id1+'\')\">'+groups.pool[i].url+'</button></div><button  id="'+ idPool +'"  onclick="addPool(\'' + value + '\',\''+ photoTitle +'\',\''+ groups.pool[i].url +'\',\''+ groups.pool[i].id +'\')">Add Pool</button>').appendTo('#groups');
+                                        $('<div><button class="btn2" id=\"search-pool'+group_id0+'\" onclick=\"searchPool(\''+group_id0+'\',\''+group_id1+'\')\">'+groups.pool[i].url+'</button></div><button class="btn2" id="'+ idPool +'"  onclick="addPool(\'' + value + '\',\''+ photoTitle +'\',\''+ groups.pool[i].url +'\',\''+ groups.pool[i].id +'\')">Add Pool</button>').appendTo('#groups');
                                 } 
                         }else{
                                 $('<h3>No pool available</h3>').appendTo('#groups'); 

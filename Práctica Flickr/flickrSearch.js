@@ -22,7 +22,7 @@ $('#info').html("<img src='spinner.gif'/>");
 		$('<img id ="'+ photoTitle +'" src="'+ photoUrl +'"/>').load(function() {
             var fun = "addFavorite(";
             let srcc = "1";															
-  			$('<div style="width:95px;display:inline-block;margin:5px;"><button id=\"detail\" onclick=\"seeDetails(\'' + this.src+'\',\''+ this.id +'\')\"><img src="'+ this.src +'_s.jpg"/></button><div  class=\'' + this.src + 'class\'><button id="'+ photoUrl +';" style="position:relative;top:50%; left:25%;margin:5px;" onclick="addFavourite(\'' + this.src + '\',\''+ this.id +'\')">Fav</button></div></div>').appendTo('#info');
+  			$('<div class="divbrowser"><button class="imgbrowser" id=\"detail\" onclick=\"seeDetails(\'' + this.src+'\',\''+ this.id +'\')\"><img src="'+ this.src +'_s.jpg"/></button><div  class=\'' + this.src + 'class\'><button id="'+ photoUrl +';" class="btn" onclick="addFavourite(\'' + this.src + '\',\''+ this.id +'\')">Fav</button></div></div>').appendTo('#info');
 	});
  	}
      $('#info').add("</div>")
