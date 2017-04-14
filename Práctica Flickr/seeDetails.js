@@ -8,6 +8,7 @@ function seeDetails (value, photoTitle) {
 			"&method=flickr.galleries.getListForPhoto&photo_id="+id+"&nojsoncallback=?"
         }).done(function(data) {
                 var galleries = data;
+                console.log(galleries);
 	        $.ajax({
                         url:"https://api.flickr.com/services/rest/"+
 			        "?api_key="+api_key+"&format=json"+
@@ -24,8 +25,10 @@ function seeDetails (value, photoTitle) {
                                 $('<p>'+photoTitle+'</p>').appendTo('#description'); 
                         }
                         if(galleries.galleries.gallery.length!==0){
-                                for(var i=0; i<galleries.galleries.gallery.length; i++){   
-                                        $('<p>'+galleries.galleries.gallery[0].title+'</p><button id="'+ galleries.galleries.gallery[0].title +';" style="position:relative;top:50%; left:25%;margin:5px;" onclick="addGallery(\'' + galleries.galleries.gallery[0].title + '\')">Add Gallery</button>').appendTo('#galleries');
+                                for(var i=0; i<galleries.galleries.gallery.length; i++){ 
+                                        var titleMod = galleries.galleries.gallery[i].title._content.split(" ");
+                                        var title0 = titleMod[0];  
+                                        $('<button id=\"findByGallery'+galleries.galleries.gallery[i].id+'\" onclick=\"searchGallery(\''+galleries.galleries.gallery[i].id+'\')\">'+galleries.galleries.gallery[i].title._content+'</button><button id=\"'+ title0 +'\" style="position:relative;top:50%; left:25%;margin:5px;" onclick="addGallery(\''+value+'\',\'' + galleries.galleries.gallery[i].title._content +'\',\''+galleries.galleries.gallery[i].id+'\')">Add Gallery</button><br>').appendTo('#galleries');
                                 } 
                         }else{
                                 $('<p>No gallery available</p>').appendTo('#galleries'); 
